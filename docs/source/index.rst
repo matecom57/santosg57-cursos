@@ -19,4 +19,5 @@ Contents
 .. toctree::
 
    usage
+   Cursos_2024-R
    api
