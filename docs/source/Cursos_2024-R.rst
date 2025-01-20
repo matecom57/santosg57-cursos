@@ -73,7 +73,7 @@ Bibliografía Básica:
 3. Manas A. Pathak, “Beginning Data Science with R”. Ed. Springer
 
 
-Como se evaluarà al Estudiante:
+Como se evaluará al Estudiante:
 ------------------------------
 
 

@@ -78,11 +78,14 @@ Bibliografía Básica:
 Como se evaluará al Estudiante:
 -------------------------------
 
-
 - Ejercicios dentro de clase
+
 - Ejercicios fuera del aula
+
 - Lecturas obligatorias
+
 - Trabajos y tareas fuera del aula
+
 - Participación en clase
 
 
