@@ -2,12 +2,13 @@ Introducción al Lenguaje de Programación “PYTHON”
 =================================================
 
 Objetivos generales:
+--------------------
 
-El alumno:
 
 ● Introducir al alumno en aprender un lenguaje de programación para el análisis estadístico de datos.
 
 Objetivos específicos: El alumno:
+---------------------------------
 
 ● Aprender un lenguaje de programación, fácil de aprender y útil para el análisis de datos.
 
@@ -74,12 +75,15 @@ Bibliografía Básica:
 
 2. Hans Petter Langtangen, “A Primer on Scientific Programming with Python”, 5th Edition, Springer
 
+Como se evaluará al Estudiante:
+-------------------------------
 
-Ejercicios dentro de clase
-Ejercicios fuera del aula
-Lecturas obligatorias
-Trabajos y tareas fuera del aula
-Participación en clase
+
+- Ejercicios dentro de clase
+- Ejercicios fuera del aula
+- Lecturas obligatorias
+- Trabajos y tareas fuera del aula
+- Participación en clase
 
 
 
