@@ -1,4 +1,4 @@
-Welcome to Lumache's documentation!
+¡Bienvenido a la Pagina de Cursos que se ofrecen!
 ===================================
 
 **Lumache** (/lu'make/) is a Python library for cooks and food lovers
@@ -11,14 +11,13 @@ how to :ref:`installation` the project.
 
 .. note::
 
-   This project is under active development.
+   Este proyecto está en desarrollo activo.
+   Escribanos para cualquier comentario o duda a matecom57@gmail.com
 
-Contents
---------
+Cursos que se ofrecen:
+--------------
 
 .. toctree::
 
-   usage
    Cursos_2024-R
    Cursos_2024-Python
-   api
