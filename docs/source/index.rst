@@ -26,5 +26,6 @@ Cursos que se ofrecen:
    linux/linux
    estadistica/estadistica
    fisica/fisica
+   Fractales/fractales
    www
 
