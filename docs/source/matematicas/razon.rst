@@ -41,3 +41,17 @@ Ejemplos
 
 a) :math:`\frac{7}{3} = \frac{14}{6}=2.\bar{3}`
  
+b) :math:`\frac{10}{50} = \frac{5}{25} = \frac{15}{75} = \frac{1}{5} = 0.2`
+
+c) :math:`\frac{6}{3} = \frac{4}{2} = \frac{2}{1} = 2`
+
+Teorema fundamental ed las proporciones
+---------------------------------------
+
+El producto de los extremos es igual al producto de los medios
+
+:math:`\frac{a}{b} = \frac{c}{d}` es a*d = B*c, :math:`b, d \neq 0`
+
+
+
+
