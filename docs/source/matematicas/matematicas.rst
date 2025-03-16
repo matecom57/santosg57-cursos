@@ -7,5 +7,5 @@ Matematicas
 
 .. toctree::
 
-   razon/razon
+   razon
 
