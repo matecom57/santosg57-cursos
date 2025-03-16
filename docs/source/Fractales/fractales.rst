@@ -9,6 +9,6 @@ Edward Lorenz - 1962
 
    \frac{dy}{dt} = xz + 2x - y
 
-   \frac{dz}{dt} = xz + 2x -y
+   \frac{dz}{dt} = xy - \frac{8}{3} z
 
 
