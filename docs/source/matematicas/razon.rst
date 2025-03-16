@@ -39,4 +39,5 @@ b, c - medios de la proporcion
 Ejemplos
 --------
 
+a) :math:`\frac{7}{3} = \frac{14}{6}=2.\bar{3}`
  
