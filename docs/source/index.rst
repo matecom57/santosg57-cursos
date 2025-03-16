@@ -22,4 +22,4 @@ Cursos que se ofrecen:
    Cursos_2024-R
    Cursos_2024-Python
    singularity/singularity
-
+   matematicas/matematicas
