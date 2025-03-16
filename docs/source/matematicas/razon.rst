@@ -24,3 +24,19 @@ b) El valor de la razon entre 100 y 50 es
 Que es una proporcion?
 ----------------------
 
+Una proporcion es la igualdad entre dos o mas razones. Se escribe:
+
+:math:`\frac{a}{b} = \frac{c}{d}=k` o a:b = c:d = k, :math:`b,d \neq 0`
+
+k - constante de proporcionalidad
+
+Se lee "a es a b como c es a d"
+
+s, d - extremos de la proporcion
+
+b, c - medios de la proporcion
+
+Ejemplos
+--------
+
+ 
