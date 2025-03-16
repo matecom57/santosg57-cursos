@@ -38,4 +38,18 @@ Univariate regression models can be expressed mathematically as a regression fun
 
    Y = \beta_0 + \beta_1 X_1 + \varepsilon
 
+for a simple model with a single predictor variable. 
+
+For a more complex model with multiple predictors, we may write
+
+.. math::
+
+   Y = \beta_0 + \beta_1 X_1 + \beta_2 X_2 + ... + \beta_q X_q + \varepsilon
+
+
+disturbance -
+
+The :math:`X_j` explanatory variables, j=1,2, ..., q, can be either continuous or categorical.
+
+
 
