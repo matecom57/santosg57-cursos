@@ -1,4 +1,6 @@
 Estadistica
 ===========
 
+.. toctree::
 
+   c01

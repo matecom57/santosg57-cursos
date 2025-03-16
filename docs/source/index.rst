@@ -24,4 +24,4 @@ Cursos que se ofrecen:
    singularity/singularity
    matematicas/matematicas
    linux/linux
-
+   estadistica/estadistica
