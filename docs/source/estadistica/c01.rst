@@ -24,3 +24,18 @@ distinguished
 Review of Univariate Linear Model Analysis
 ------------------------------------------
 
+the main goal of the linear model is to evaluate relationships in order to
+explain variability in a response variable as a fuction of some specified model
+and an error of prediction:
+
+.. math::
+
+   Response = Model + Error
+
+Univariate regression models can be expressed mathematically as a regression function,
+
+.. math::
+
+   Y = \beta_0 + \beta_1 X_1 + \varepsilon
+
+
