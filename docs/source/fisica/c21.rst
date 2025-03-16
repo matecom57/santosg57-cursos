@@ -1,0 +1,22 @@
+21-1 COULOMB’S LAW
+==================
+
+After reading this module, you should be able to . . .
+
+* Distinguir entre ser eléctricamente neutro, tener carga negativa y tener carga positiva e identificar el exceso de carga.
+
+* Distinguir entre conductores, no conductores (aislantes), semiconductores y superconductores.
+
+* Describe las propiedades eléctricas de las partículas dentro de un átomo.
+
+* Identificar los electrones de conducción y explicar su papel a la hora de crear un objeto conductor con carga negativa o positiva.
+
+* Identifique lo que se entiende por “aislado eléctricamente” y por “puesta a tierra”.
+
+* Explique cómo un objeto cargado puede generar una carga inducida en un segundo objeto.
+
+* Identificar que las cargas con el mismo signo eléctrico se repelen entre sí y aquellas con signos eléctricos opuestos se atraen.
+
+* Para cualquiera de las partículas de un par de partículas cargadas, dibuje un diagrama de cuerpo libre, que muestre la fuerza electrostática (fuerza de Coulomb) sobre ella y ancle la cola del vector de fuerza en esa partícula.
+
+

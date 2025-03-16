@@ -25,3 +25,6 @@ Cursos que se ofrecen:
    matematicas/matematicas
    linux/linux
    estadistica/estadistica
+   fisica/fisica
+
+
