@@ -1,0 +1,26 @@
+c01. Introduction and review of univariate general linear models
+================================================================
+
+few data analytic techniques command a position of greater importance 
+
+multiple regression analysis
+
+the purpose of the investigator is to study the relationship between the variables
+
+fitting regression models to data allows the analyst the ability to account for or explain variation
+in a criterion variable as a function of one or more predictor variables.
+
+the general linear model is an extension of regression models to accommodate both qualitative
+and quantitative predictor variables.
+
+subsumes
+
+the breadth of coverage of possible analyses afforded 
+
+distinguished
+
+222222222222222
+
+Review of Univariate Linear Model Analysis
+------------------------------------------
+
