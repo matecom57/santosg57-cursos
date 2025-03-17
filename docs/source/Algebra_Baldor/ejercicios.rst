@@ -9,4 +9,9 @@ Ejer. 12. Hallar el valor de las expresiones siguientes para: :math:`a=3, b=4, c
 
 
 3. :math:`\frac{2 \sqrt{a^2b^2}}{3} + \frac{3 \sqrt{2 + d^2}}{4} -a \sqrt{n}`
- 
+
+Ejer. 13. Hallar4 el valor numerico de las expresiones siguientes para:
+
+:math:`a=1, b=2, c=3, d=4, m=\frac{1}{2}, n=\frac{2}{3}, p=\frac{1}{4}, x=0`
+
+1. :math:`(\frac{\sqrt{c^2 + d^2}}{a} + \frac{2}{\sqrt{d}})m` 
