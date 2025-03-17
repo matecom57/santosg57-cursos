@@ -27,5 +27,6 @@ Cursos que se ofrecen:
    estadistica/estadistica
    fisica/fisica
    Fractales/fractales
+   Algebra_Baldor/ejercicios
    www
 
