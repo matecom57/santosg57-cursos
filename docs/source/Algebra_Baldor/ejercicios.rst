@@ -15,3 +15,7 @@ Ejer. 13. Hallar4 el valor numerico de las expresiones siguientes para:
 :math:`a=1, b=2, c=3, d=4, m=\frac{1}{2}, n=\frac{2}{3}, p=\frac{1}{4}, x=0`
 
 1. :math:`(\frac{\sqrt{c^2 + d^2}}{a} + \frac{2}{\sqrt{d}})m` 
+
+2. :math:`\frac{a + \frac{d}{b}}{d-b} \times \frac{5 + \frac{2}{m^2}}{p^2}`
+
+3. :math:`\frac{a^2+b^2}{b^2-a^2} + 3(a+b)(2a+3b)`
