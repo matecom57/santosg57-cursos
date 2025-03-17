@@ -1,5 +1,5 @@
-Ejercicios
-==========
+Algebra-Baldor
+==============
 
 Ejer. 12. Hallar el valor de las expresiones siguientes para: :math:`a=3, b=4, c=\frac{1}{3}, d=\frac{1}{2}, m=6, n=\frac{1}{4}`
 
