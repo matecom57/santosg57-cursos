@@ -1,5 +1,5 @@
-Fractales
-=========
+EDuard Lorez-1962
+=================
 
 Edward Lorenz - 1962
 
