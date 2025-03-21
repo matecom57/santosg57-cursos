@@ -30,3 +30,4 @@ Cursos que se ofrecen:
    Algebra_Baldor/ejercicios
    www
    Biosignal_Acquisition_and_Processing/temario
+   Python_Data_Analytics_3E/temario
