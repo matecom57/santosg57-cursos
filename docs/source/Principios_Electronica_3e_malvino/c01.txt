@@ -1,0 +1,27 @@
+* teoria de circuitos de cc
+* ley de Ohm
+* leyes de Kirchoff
+
+1.1 Flujo Electronico y flujo convencional
+
+¿ en que direccion fluyen las cargas electricas?
+
+* ley de Murphy
+
+La teoria de fluido
+
+* Franklin (1750)
+
+* corriente convencional
+
+El electron
+
+* electrones libres
+
+* cargas
+
+* campo electrico
+
+* nivel atomico
+
+
