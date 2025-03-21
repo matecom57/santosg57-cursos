@@ -29,4 +29,4 @@ Cursos que se ofrecen:
    Fractales/fractales
    Algebra_Baldor/ejercicios
    www
-
+   Biosignal_Acquisition_and_Processing/temario
