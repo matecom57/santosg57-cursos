@@ -1,3 +1,6 @@
+Temario
+=======
+
 1 Meet Your Biosignals  1
 
 2 Biosignal Sensor Creation  15
@@ -29,10 +32,6 @@
 15 Machine Learning Strikes Back . 237
 
 16 File Exploration  251
-
-vii viii
-
-Contents
 
 17 From Python to the World  261
 
