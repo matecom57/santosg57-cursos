@@ -19,7 +19,7 @@ Cursos que se ofrecen:
 
 .. toctree::
 
-   Cursos_2024-R
+   curso_R	
    Cursos_2024-Python
    singularity/singularity
    matematicas/matematicas

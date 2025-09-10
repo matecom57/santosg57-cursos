@@ -3,33 +3,44 @@ Introducción al Lenguaje de Programación “R”
 
 **Objetivos generales:**
 
-● Introducir al alumno en aprender un lenguaje de programación para el análisis estadístico de datos.
+* Introducir al alumno en aprender un lenguaje de programación para el análisis estadístico de datos.
 
 **Objetivos específicos: **
 
-● Aprender un lenguaje de programación, fácil de aprender y útil para el análisis de datos.
+* Aprender un lenguaje de programación, fácil de aprender y útil para el análisis de datos.
 
-● Aprender herramientas que proporciona R para hacer análisis estadístico de datos, paramétrico y no paramétrico.
+* Aprender herramientas que proporciona R para hacer análisis estadístico de datos, paramétrico y no paramétrico.
 
 
 TEMARIO
 -------
 
+1. Introducción
+---------------
 
-1. Qué es “R”. Instalación y Ambiente de Programación. Historia
+1.1 Qué es “R”. Instalación y Ambiente de Programación. Historia
+1.2 R como Calculadora. Operadores Aritméticos, Operadores de Comparación.
+1.3 Conceptos básicos de Programación Orientada a Objetos. 
 
-2. R como Calculadora. Operadores Aritméticos, Operadores de Comparación.
+2. Tipos de Datos 
+------------------
 
-3. Conceptos básicos de Programación Orientada a Objetos. Tipos de Datos. Datos Escalares, Vectores, Factores, Matrices. Definición de 
-Variables.
+2.1 Datos Escalares
+2.2 Vectores
+2.3 Factores 
+2.4 Matrices
+2.5 Definición de Variables
 
-4. Solución de Ecuaciones. Diferenciación e Integración de Funciones.
+3. Estructuras de Control
+3.1 if
+3.2 while
+3.3 for
 
-5. Script’s. Implementando algoritmos en la solución de problemas con el lenguaje de programación “R”.
+4. Funciones
+4.1 Funciones matemáticas
+4.2 apply
 
-6. Estructuras de Control: if, while, for
-
-7. Funciones en R. “apply”, Paquetes. Ayuda!.
+5. Paquetes
 
 8. Graficación. ggplot
 
@@ -71,22 +82,5 @@ Bibliografía Básica:
 2. Thomas W. MacFarland, “Introduction to Data Analysis and Graphical Presentation in Biostatistics with R”. Ed. Springer
 
 3. Manas A. Pathak, “Beginning Data Science with R”. Ed. Springer
-
-
-Como se evaluará al Estudiante:
-------------------------------
-
-
-- Ejercicios dentro de clase
-
-- Ejercicios fuera del aula
-
-- Lecturas obligatorias
-
-- Trabajos y tareas fuera del aula
-
-- Participación en clase
-
-
 
 
