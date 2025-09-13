@@ -39,4 +39,6 @@ Cursos que se ofrecen:
    Python_Projects_for_Beginners_Connor
    Introduction_to_Python_Network_Automation_Brendan
    The_Absolute_Beginner_Guide_to_Python_Programming_Kevin
+   Advanced_Guide_to_Python_3_Programming_John
+   Python_Programming_Recipes_for_IoT_Applications_Jivan
 
