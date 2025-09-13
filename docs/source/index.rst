@@ -33,4 +33,10 @@ Cursos que se ofrecen:
    Python_Data_Analytics_3E/temario
    How_to_be_a_Web_Developer/temario
    biostatistics_daniel
+   Practical_Python_AI_Projects_Serge
+   Python_Programming_Fundamentals_2E_Kent
+   Numerical_Python_2E_Robert
+   Python_Projects_for_Beginners_Connor
+   Introduction_to_Python_Network_Automation_Brendan
+   The_Absolute_Beginner_Guide_to_Python_Programming_Kevin
 
