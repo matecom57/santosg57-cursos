@@ -20,6 +20,7 @@ Cursos que se ofrecen:
 .. toctree::
 
    Beginning_R_2E_Joshua
+   Learn_R_for_Applied_Statistics_Eric
    curso_R	
    Cursos_2024-Python
    singularity/singularity
