@@ -19,6 +19,7 @@ Cursos que se ofrecen:
 
 .. toctree::
 
+   Beginning_R_2E_Joshua
    curso_R	
    Cursos_2024-Python
    singularity/singularity
@@ -32,7 +33,7 @@ Cursos que se ofrecen:
    Biosignal_Acquisition_and_Processing/temario
    Python_Data_Analytics_3E/temario
    How_to_be_a_Web_Developer/temario
-   biostatistics_daniel
+   biostatistics_daniel/biostatistics_daniel
    Practical_Python_AI_Projects_Serge
    Python_Programming_Fundamentals_2E_Kent
    Numerical_Python_2E_Robert

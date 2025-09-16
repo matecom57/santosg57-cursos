@@ -1,37 +1,37 @@
 Introducción a la Estadística con Lenguaje "R"
 ==============================================
 
-1 INTRODUCTION TO BIOSTATISTICS
+1 INTRODUCCIÓN A LA ESTADÍSTICA
 -------------------------------
 
-1.1 Introduction
-1.2 Some Basic Concepts
-1.3 Measurement and Measurement Scales
-1.4 Sampling and Statistical Inference
-1.5 The Scientific Method and the Design of Experiments
-1.6 Computers and Biostatistical Analysis
-1.7 Summary
-    Review Questions and Exercises
-    References
+1.1 Introducción
+1.2 Algunos conceptos básicos
+1.3 Medición y escalas de medición
+1.4 Muestreo e inferencia estadística
+1.5 El método científico y el diseño de experimentos
+1.6 Computadoras y análisis bioestadístico
+1.7 Resumen
+    Preguntas y ejercicios de repaso
+    Referencias
 
-2. DESCRIPTIVE STATISTICS
+2. ESTADÍSTICAS DESCRIPTIVAS
 -------------------------
 
-2.1 Introduction 
-2.2 The Ordered Array
-2.3 Grouped Data: The Frequency Distribution
-2.4 Descriptive Statistics: Measures of Central Tendency
-2.5 Descriptive Statistics: Measures of Dispersion
+2.1 Introducción
+2.2 El arreglo ordenado
+2.3 Datos agrupados: la distribución de frecuencias
+2.4 Estadística descriptiva: medidas de tendencia central
+2.5 De
 2.6 Summary
     Review Questions and Exercises
     References
 
-3. SOME BASIC PROBABILITY CONCEPTS
+3. ALGUNOS CONCEPTOS BÁSICOS DE PROBABILIDAD
 ----------------------------------
 
-3.1 Introduction
-3.2 Two Views of Probability: Objective and Subjective
-3.3 Elementary Properties of Probability
+3.1 Introducción
+3.2 Dos visiones de la probabilidad: objetiva y subjetiva
+3.3 Cálculo de la probabilidad de un evento
 3.4 Calculating the Probability of an Event
 3.5 Bayes’ Theorem, Screening Tests,
     Sensitivity, Specificity, and Predictive
