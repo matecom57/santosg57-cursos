@@ -21,6 +21,7 @@ Cursos que se ofrecen:
 
    Beginning_R_2E_Joshua
    Learn_R_for_Applied_Statistics_Eric
+   Hands-On_Programming_with_R_Garrett
    curso_R	
    Cursos_2024-Python
    singularity/singularity
