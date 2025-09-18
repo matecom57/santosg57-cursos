@@ -4,15 +4,15 @@ Introducción a la Estadística con Lenguaje "R"
 1 INTRODUCCIÓN A LA ESTADÍSTICA
 -------------------------------
 
-1.1 Introducción
-1.2 Algunos conceptos básicos
-1.3 Medición y escalas de medición
-1.4 Muestreo e inferencia estadística
-1.5 El método científico y el diseño de experimentos
-1.6 Computadoras y análisis bioestadístico
-1.7 Resumen
-    Preguntas y ejercicios de repaso
-    Referencias
+* 1.1 Introducción
+* 1.2 Algunos conceptos básicos
+* 1.3 Medición y escalas de medición
+* 1.4 Muestreo e inferencia estadística
+* 1.5 El método científico y el diseño de experimentos
+* 1.6 Computadoras y análisis bioestadístico
+* 1.7 Resumen
+*    Preguntas y ejercicios de repaso
+*    Referencias
 
 2. ESTADÍSTICAS DESCRIPTIVAS
 -------------------------
