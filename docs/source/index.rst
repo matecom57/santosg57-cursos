@@ -44,4 +44,6 @@ Cursos que se ofrecen:
    The_Absolute_Beginner_Guide_to_Python_Programming_Kevin
    Advanced_Guide_to_Python_3_Programming_John
    Python_Programming_Recipes_for_IoT_Applications_Jivan
+   Permutation_Statistical_Methods_with_R_Kenneth
+   Introductory_Statistics_with_R_2E_Peter
 
