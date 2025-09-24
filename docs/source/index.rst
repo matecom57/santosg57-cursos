@@ -18,6 +18,7 @@ Cursos que se ofrecen:
 --------------
 
 .. toctree::
+   :maxdepth: 1
 
    Beginning_R_2E_Joshua
    Learn_R_for_Applied_Statistics_Eric

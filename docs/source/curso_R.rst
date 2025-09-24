@@ -5,7 +5,7 @@ Introducción al Lenguaje de Programación “R”
 
 * Introducir al alumno en aprender un lenguaje de programación para el análisis estadístico de datos.
 
-**Objetivos específicos: **
+**Objetivos específicos:**
 
 * Aprender un lenguaje de programación, fácil de aprender y útil para el análisis de datos.
 
@@ -19,38 +19,57 @@ TEMARIO
 ---------------
 
 1.1 Qué es “R”. Instalación y Ambiente de Programación. Historia
+
 1.2 R como Calculadora. Operadores Aritméticos, Operadores de Comparación.
+
 1.3 Conceptos básicos de Programación Orientada a Objetos. 
 
 2. Tipos de Datos 
 ------------------
 
 2.1 Datos Escalares
+
 2.2 Vectores
+
 2.3 Factores 
+
 2.4 Matrices
+
 2.5 Definición de Variables
 
 3. Estructuras de Control
+-------------------------
+
 3.1 if
+
 3.2 while
+
 3.3 for
 
 4. Funciones
+------------
+
 4.1 Funciones matemáticas
+
 4.2 apply
 
 5. Paquetes
+-----------
 
 8. Graficación. ggplot
+----------------------
 
 9. Otras estructuras de datos. Arreglos, Listas y DataFrame’s
+-------------------------------------------------------------
 
 10. Entrada Y Salida. Salvando y restaurando datos de R.
+---------------------------------------------------------
 
 11. Funciones de Usuario y Programación.
+----------------------------------------
 
 12. Aplicaciones
+-----------------
 
 12.1 Diferenciación, Integración e Interpolación.
 
