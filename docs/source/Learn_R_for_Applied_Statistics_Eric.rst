@@ -151,90 +151,160 @@ Reading an SPSS File␈94
 Writing an SPSS File␈96
 
 Reading a JSON File␈96
+
 Basic Data Processing␈97
+
 Selecting Data␈97
+
 Sorting␈99
+
 Filtering␈101
+
 Removing Missing Values␈102
+
 Removing Duplicates␈103
-vTable of Contents
+
 Some Basic Statistics Terms␈104
+
 Types of Data␈104
+
 Mode, Median, Mean␈105
+
 Interquartile Range, Variance, Standard Deviation␈110
+
 Normal Distribution␈115
+
 Binomial Distribution␈121
+
 Conclusion␈124
+
 References␈125
 
 Chapter 5: ␇Data Visualizations␈129
 -----------------------------------
 
 What Are Data Visualizations?␈129
+
 Bar Chart and Histogram␈130
+
 Line Chart and Pie Chart␈137
+
 Scatterplot and Boxplot␈142
+
 Scatterplot Matrix␈146
+
 Social Network Analysis Graph Basics␈147
+
 Using ggplot2␈150
+
 What Is the Grammar of Graphics?␈151
+
 The Setup for ggplot2␈151
+
 Aesthetic Mapping in ggplot2␈152
+
 Geometry in ggplot2␈152
+
 Labels in ggplot2␈155
+
 Themes in ggplot2␈156
+
 ggplot2 Common Charts␈158
+
 Bar Chart␈158
+
 Histogram␈160
+
 Density Plot␈161
+
 Scatterplot␈161
-viTable of Contents
+
 Line chart␈162
+
 Boxplot␈163
+
 Interactive Charts with Plotly and ggplot2␈166
+
 Conclusion␈169
+
 References␈170
+
 
 Chapter 6: ␇Inferential Statistics and Regressions␈173
 ----------------------------------------------------
 
 What Are Inferential Statistics and Regressions?␈173
+
 apply(), lapply(), sapply()␈175
+
 Sampling␈178
+
 Simple Random Sampling␈178
+
 Stratified Sampling␈179
+
 Cluster Sampling␈179
+
 Correlations␈183
+
 Covariance␈185
+
 Hypothesis Testing and P-Value␈186
+
 T-Test␈187
+
 Types of T-Tests␈187
+
 Assumptions of T-Tests␈188
+
 Type I and Type II Errors␈188
+
 One-Sample T-Test␈188
+
 Two-Sample Independent T-Test␈190
+
 Two-Sample Dependent T-Test␈193
+
 Chi-Square Test␈194
+
 Goodness of Fit Test␈194
+
 Contingency Test␈196
+
 ANOVA␈198
-viiTable of Contents
+
 Grand Mean␈198
+
 Hypothesis␈198
+
 Assumptions␈199
+
 Between Group Variability␈199
+
 Within Group Variability␈201
+
 One-Way ANOVA␈202
+
 Two-Way ANOVA␈204
+
 MANOVA␈206
+
 Nonparametric Test␈209
+
 Wilcoxon Signed Rank Test␈209
+
 Wilcoxon-Mann-Whitney Test␈213
+
 Kruskal-Wallis Test␈216
+
 Linear Regressions␈218
+
 Multiple Linear Regressions␈223
+
 Conclusion␈229
+
 References␈231
+
 ␇Index␈237
 
 
