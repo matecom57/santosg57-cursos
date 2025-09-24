@@ -2,90 +2,154 @@ Learn R for Applied Statistics, Eric
 ==============================
 
 About the Author␈ix
+
 About the Technical Reviewer␈xi
+
 Acknowledgments␈xiii
+
 Introduction␈xv
 
 Chapter 1: ␇Introduction␈1
 -------------------------
 
 What Is R?␈1
+
 High-Level and Low-Level Languages␈2
+
 What Is Statistics?␈3
+
 What Is Data Science?␈4
+
 What Is Data Mining?␈6
+
 Business Understanding␈8
+
 Data Understanding␈8
+
 Data Preparation␈8
+
 Modeling␈9
+
 Evaluation␈9
+
 Deployment␈9
+
 What Is Text Mining?␈9
+
 Data Acquisition␈10
+
 Text Preprocessing␈10
+
 Modeling␈11
+
 Evaluation/Validation␈11
+
 Applications␈11
-iiiTable of Contents
+
+Table of Contents
+-----------------
+
 Natural Language Processing␈11
+
 Three Types of Analytics␈12
+
 Descriptive Analytics␈12
+
 Predictive Analytics␈13
+
 Prescriptive Analytics␈13
+
 Big Data␈13
+
 Volume␈13
+
 Velocity␈14
+
 Variety␈14
+
 Why R?␈15
+
 Conclusion␈16
+
 References␈18
 
 Chapter 2: ␇Getting Started␈19
 -----------------------------
 
 What Is R?␈19
+
 The Integrated Development Environment␈20
+
 RStudio: The IDE for R␈22
+
 Installation of R and RStudio␈22
+
 Writing Scripts in R and RStudio␈30
+
 Conclusion␈36
+
 References␈37
 
 Chapter 3: ␇Basic Syntax␈39
 --------------------------
 
 Writing in R Console␈39
+
 Using the Code Editor␈42
+
 Adding Comments to the Code␈46
+
 Variables␈47
+
 Data Types␈48
+
 Vectors␈50
+
 Lists␈53
-ivTable of Contents
+
 Matrix␈58
+
 Data Frame␈63
+
 Logical Statements␈67
+
 Loops␈69
+
 For Loop␈69
+
 While Loop␈71
+
 Break and Next Keywords␈72
+
 Repeat Loop␈74
+
 Functions␈75
+
 Create Your Own Calculator␈80
+
 Conclusion␈83
+
 References␈84
 
 Chapter 4: ␇Descriptive Statistics␈87
 --------------------------------------
 
 What Is Descriptive Statistics?␈87
+
 Reading Data Files␈88
+
 Reading a CSV File␈89
+
 Writing a CSV File␈91
+
 Reading an Excel File␈92
+
 Writing an Excel File␈93
+
 Reading an SPSS File␈94
+
 Writing an SPSS File␈96
+
 Reading a JSON File␈96
 Basic Data Processing␈97
 Selecting Data␈97
