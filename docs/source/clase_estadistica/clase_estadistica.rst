@@ -155,3 +155,36 @@ un nivel de confianza específico.
    ci = stats.t.interval(confidence_level, df=len(d)-1, loc=np.mean(d), scale=np.std(d, ddof=1) / np.sqrt(len(d)))
    print(ci)
 
+**Utilizando numpy y scipy**
+
+.. code:: Python
+
+   import numpy as np
+   import scipy.stats as stats
+
+   d = [12, 15, 14, 10, 13, 17, 14, 15, 16, 14] 
+   m, s, n = np.mean(d), np.std(d, ddof=1), len(d)  # Mean, SD, Size
+   t = stats.t.ppf(0.975, df=n-1)  # t-value
+
+   e = t * (s / np.sqrt(n))  # Margin
+   print(m - e, m + e) 
+
+**Usando pandas**
+
+.. code:: Python
+
+   import pandas as pd 
+   import numpy as np
+   import scipy.stats as stats
+
+   d = [12, 15, 14, 10, 13, 17, 14, 15, 16, 14]  # Data
+   df = pd.DataFrame(d, columns=['data'])
+
+   m, s, n = df['data'].mean(), df['data'].std(ddof=1), len(df)
+   t = stats.t.ppf(0.975, df=n-1)  # t-value
+   e = t * (s / np.sqrt(n))  # Margin
+   print(m - e, m + e) 
+
+
+
+
