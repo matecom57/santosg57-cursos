@@ -20,7 +20,19 @@ Ejemplos:
 
    print('media= ' + str(np.mean(x)))
    print('mediana= ' + str(np.median(x)))
-   print('varianza= ' + str(np.var(x)))
-   print('desviación estándar= ' + str(np.std(x)))
+   print('varianza= ' + str(np.round(np.var(x),2)))
+   print('desviación estándar= ' + str(np.round(np.std(x),2)))
+
+2)
+
+.. code Python
+
+   x = [56, 55, 60, 55, 59, 61, 60, 62, 59, 62, 57, 59, 67, 52, 65, 62, 60, 56, 66, 67]
+
+   print('media= ' + str(np.mean(x)))
+   print('mediana= ' + str(np.median(x)))
+   print('varianza= ' + str(np.round(np.var(x),2)))
+   print('desviación estándar= ' + str(np.round(np.std(x),2)))
+
 
 
