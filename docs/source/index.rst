@@ -48,4 +48,5 @@ Cursos que se ofrecen:
    Permutation_Statistical_Methods_with_R_Kenneth
    Introductory_Statistics_with_R_2E_Peter
    clase_estadistica/clase_estadistica
+   curso_analisis_numerico/raices_de_ecuaciones
 
