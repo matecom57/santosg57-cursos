@@ -66,4 +66,25 @@ Ejemplos:
    plt.hist(valores)
    plt.show()
 
+**Poligono de Frecuencias**
+
+.. code:: Python
+
+   import matplotlib.pyplot as plt
+   import numpy as np
+
+   datos = np.random.randint(0, 100, 50)
+
+   frecuencias, bordes, patches = plt.hist(datos, bins=10, edgecolor='black')
+
+   centros_intervalo = 0.5 * (bordes[:-1] + bordes[1:])
+
+   plt.plot(centros_intervalo, frecuencias, marker='o')
+
+   plt.xlabel("Valores")
+   plt.ylabel("Frecuencia")
+   plt.title("Polígono de Frecuencia")
+
+   plt.show()
+
 
