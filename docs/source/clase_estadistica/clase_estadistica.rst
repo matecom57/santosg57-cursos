@@ -4,7 +4,7 @@ Estadística Descriptiva e Inferencial
 Medidas Descriptivas
 --------------------
 
-media, mediana, moda, varianza, desviación estándar
+media, mediana, moda, varianza, desviación estándar, minimo, maximo
 
 histograma, simetria
 
@@ -22,6 +22,8 @@ Ejemplos:
    print('mediana= ' + str(np.median(x)))
    print('varianza= ' + str(np.round(np.var(x),2)))
    print('desviación estándar= ' + str(np.round(np.std(x),2)))
+   print('mínimo= ' + str(np.min(x)))
+   print('máximo= ' + str(np.max(x)))
 
 2)
 
@@ -33,6 +35,7 @@ Ejemplos:
    print('mediana= ' + str(np.median(x)))
    print('varianza= ' + str(np.round(np.var(x),2)))
    print('desviación estándar= ' + str(np.round(np.std(x),2)))
-
+   print('mínimo= ' + str(np.min(x)))
+   print('máximo= ' + str(np.max(x)))
 
 
