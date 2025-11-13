@@ -38,10 +38,6 @@ Ejemplos:
    print('mínimo= ' + str(np.min(x)))
    print('máximo= ' + str(np.max(x)))
 
-Para hacer un histograma en Python es necesario contar las veces que aparece cada valor en cada intervalo en el conjunto de 
-valores. Después se puede hacer una representación textual del cálculo realizado. También se puede usar una librería como 
-`Matplotlib, Seaborn, Bokeh, Altair` o `Plotly`.
-
 **Cómo Hacer un Histograma?????**
 
 .. code:: Python
