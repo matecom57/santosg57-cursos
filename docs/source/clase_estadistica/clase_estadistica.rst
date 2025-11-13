@@ -88,3 +88,20 @@ Ejemplos:
    plt.show()
 
 
+**Crear un boxplot**
+
+.. code:: Python
+
+   import matplotlib.pyplot as plt
+   import numpy as np
+
+   data = [np.random.normal(0, std, 100) for std in range(1, 4)]
+
+   plt.boxplot(data)
+
+   plt.title("Box Plot Example")
+   plt.xlabel("Data Sets")
+   plt.ylabel("Values")
+
+   plt.show()
+
