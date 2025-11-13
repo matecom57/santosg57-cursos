@@ -118,3 +118,22 @@ Ejemplos:
    plt.bar(x = x, height = y, yerr = error, capsize = 10, ecolor = "r")
    plt.show()
 
+Intervalo de de Confianza
+------------------------
+
+**El intervalo de confianza (IC)** es un rango estadístico que estima el valor real de un parámetro 
+poblacional, como la media poblacional, con una probabilidad específica. Proporciona un rango donde es 
+probable que se encuentre el valor real, según los datos de la muestra. El nivel de confianza (p. ej., 95 
+%) indica la certeza de que el valor real se encuentra dentro de este rango. 
+
+**Fórmula:**
+
+.. math::
+
+   Intervalo de confianza = \bar{x} \pm t \times (\frac{s}{n})
+
+* `x`: media muestral
+* `t`: valor t que corresponde al nivel de confianza
+* `s`: desviación estándar de la muestra
+* `n`: tamaño de la muestra
+
