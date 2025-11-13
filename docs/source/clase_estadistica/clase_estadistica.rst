@@ -19,8 +19,8 @@ Ejemplos:
    x = [57, 62, 51, 59, 51, 52, 57, 45, 45, 65, 53, 63, 51, 54, 58, 43, 49, 64, 57, 60]
 
    print('media= ' + str(np.mean(x)))
-   print('mediana= ' + str(np.mean(x)))
-   print('varianza= ' + str(np.mean(x)))
-   print('desviación estándar= ' + str(np.mean(x)))
+   print('mediana= ' + str(np.median(x)))
+   print('varianza= ' + str(np.var(x)))
+   print('desviación estándar= ' + str(np.std(x)))
 
 
