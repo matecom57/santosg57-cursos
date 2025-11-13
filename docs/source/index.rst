@@ -47,4 +47,5 @@ Cursos que se ofrecen:
    Python_Programming_Recipes_for_IoT_Applications_Jivan
    Permutation_Statistical_Methods_with_R_Kenneth
    Introductory_Statistics_with_R_2E_Peter
+   clase_estadistica/clase_estadistica
 
