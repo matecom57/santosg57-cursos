@@ -130,10 +130,28 @@ probable que se encuentre el valor real, según los datos de la muestra. El nive
 
 .. math::
 
-   Intervalo de confianza = \bar{x} \pm t \times (\frac{s}{n})
+   \text{Intervalo de confianza} = \bar{x} \pm t \times \left ( \frac{s}{n} \right )
 
-* `x`: media muestral
-* `t`: valor t que corresponde al nivel de confianza
-* `s`: desviación estándar de la muestra
-* `n`: tamaño de la muestra
+* ``x``: media muestral
+* ``t``: valor t que corresponde al nivel de confianza
+* ``s``: desviación estándar de la muestra
+* ``n``: tamaño de la muestra
+
+**Usando scipy.stats.t.interval**
+
+Este método requiere proporcionar el nivel de confianza, la media muestral, la desviación estándar 
+muestral y el tamaño de la muestra. Es especialmente útil para muestras pequeñas donde se desconoce la 
+desviación estándar poblacional y se desea estimar el rango en el que se encuentra la media verdadera, con 
+un nivel de confianza específico.
+
+.. code:: Python
+
+   import numpy as np
+   import scipy.stats as stats
+
+   d = [12, 15, 14, 10, 13, 17, 14, 15, 16, 14]
+   cl = 0.95 # confidence level
+
+   ci = stats.t.interval(confidence_level, df=len(d)-1, loc=np.mean(d), scale=np.std(d, ddof=1) / np.sqrt(len(d)))
+   print(ci)
 
