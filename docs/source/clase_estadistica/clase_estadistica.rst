@@ -58,4 +58,12 @@ Ejemplos:
 	print(f'{valor}: {"*" * mapa_edades[valor]}')
 
 
+.. code:: Python
+
+   import matplotlib.pyplot as plt
+ 
+   valores = [23,22,28,32,24,28,32,15,26,22,24,24,26,28,32,41,20,39,51,18,23,28,26,34,17]
+   plt.hist(valores)
+   plt.show()
+
 
