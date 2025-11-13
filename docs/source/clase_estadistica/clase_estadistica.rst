@@ -105,3 +105,16 @@ Ejemplos:
 
    plt.show()
 
+**Grafica de Barras**
+
+.. code:: Python
+
+   import matplotlib.pyplot as plt
+
+   x = ["A", "B", "C"]
+   y = [3, 5, 1]
+   error = [0.8, 0.4, 0.2]
+
+   plt.bar(x = x, height = y, yerr = error, capsize = 10, ecolor = "r")
+   plt.show()
+
