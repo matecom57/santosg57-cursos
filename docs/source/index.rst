@@ -49,4 +49,5 @@ Cursos que se ofrecen:
    Introductory_Statistics_with_R_2E_Peter
    clase_estadistica/clase_estadistica
    curso_analisis_numerico/raices_de_ecuaciones
+   Learning_Three_js–the_JavaScript_3D_Library_for_WebGL_2E/index2
 

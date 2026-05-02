@@ -1,0 +1,1119 @@
+c01 Creating Your First 3D Scene with Three.js
+==============================================
+
+Modern browsers are slowly getting more powerful features that can be accessed
+directly from JavaScript. You can easily add video and audio with the new HTML5
+tags and create interactive components through the use of the HTML5 canvas.
+Together with HTML5, modern browsers also started supporting WebGL. With
+WebGL, you can directly make use of the processing resources of your graphics card
+and create high-performance 2D and 3D computer graphics. Programming WebGL
+directly from JavaScript to create and animate 3D scenes is a very complex and error-
+prone process. Three.js is a library that makes this a lot easier. The following list
+shows some of the things that Three.js makes easy:
+
+Los navegadores modernos están incorporando gradualmente funciones más potentes a las que se puede acceder directamente desde JavaScript. Es fácil añadir vídeo y audio con las nuevas etiquetas HTML5 y crear componentes interactivos mediante el lienzo HTML5. Junto con HTML5, los navegadores modernos también comenzaron a ser compatibles con WebGL. Con WebGL, se pueden aprovechar directamente los recursos de procesamiento de la tarjeta gráfica y crear gráficos 2D y 3D de alto rendimiento. Programar WebGL directamente desde JavaScript para crear y animar escenas 3D es un proceso muy complejo y propenso a errores. Three.js es una biblioteca que lo simplifica enormemente. La siguiente lista muestra algunas de las ventajas que ofrece Three.js:
+
+
+• Creating simple and complex 3D geometries
+• Animating and moving objects through a 3D scene
+• Applying textures and materials to your objects
+• Making use of different light sources to illuminate the scene
+• Loading objects from 3D-modeling software
+• Adding advanced postprocessing effects to your 3D scene
+• Working with your own custom shaders
+• Creating point clouds
+
+With a couple of lines of JavaScript, you can create anything, from simple 3D models
+to photorealistic real-time scenes, as shown in the following screenshot (see it
+yourself by opening http://www.vill.ee/eye/ in your browser):
+In this chapter, we'll directly dive into Three.js and create a couple of examples that
+show you how Three.js works, and which you can use to play around with. We won't
+dive into all the technical details yet; that's something you'll learn in the following
+chapters. In this chapter, we'll cover the following points:
+
+Con un par de líneas de JavaScript, puedes crear cualquier cosa, desde modelos 3D sencillos hasta escenas fotorrealistas en tiempo real, como se muestra en la siguiente captura de pantalla (compruébalo tú mismo abriendo http://www.vill.ee/eye/ en tu navegador): En este capítulo, nos adentraremos directamente en Three.js y crearemos un par de ejemplos que te mostrarán cómo funciona y con los que podrás experimentar. Todavía no profundizaremos en todos los detalles técnicos; eso es algo que aprenderás en los siguientes capítulos. En este capítulo, cubriremos los siguientes puntos:
+
+
+• Tools required to work with Three.js
+• Downloading the source code and examples used in this book
+• Creating your first Three.js scene
+• Improving the first scene with materials, lights, and animations
+• Introducing a couple of helper libraries for statistics and controlling the scene
+
+We'll start this book with a short introduction to Three.js and then quickly move on
+to the first examples and code samples. Before we get started, let's quickly look at the
+most important browsers out there and their support for WebGL.
+
+Comenzaremos este libro con una breve introducción a Three.js y luego pasaremos rápidamente a los primeros ejemplos y muestras de código. Antes de empezar, veamos rápidamente los navegadores más importantes y su compatibilidad con WebGL.
+
+
+At the time of writing this, WebGL works with the following desktop browsers:
+
+En el momento de escribir esto, WebGL funciona con los siguientes navegadores de escritorio:
+
+
+Basically, Three.js runs on any of the modern browsers except older versions of IE.
+So, if you want to use an older version of IE, you've got to take an additional step.
+For IE 10 and older, there is the iewebgl plugin, which you can get from https://
+github.com/iewebgl/iewebgl. This plugin is installed inside IE 10 and older
+versions and enables WebGL support for those browsers.
+
+Básicamente, Three.js funciona en cualquier navegador moderno, excepto en versiones antiguas de Internet Explorer. Por lo tanto, si desea usar una versión antigua de IE, deberá realizar un paso adicional. Para IE 10 y versiones anteriores, existe el complemento iewebgl, que puede descargar desde https://github.com/iewebgl/iewebgl. Este complemento se instala dentro de IE 10 y versiones anteriores, y habilita la compatibilidad con WebGL para dichos navegadores.
+
+
+It is also possible to run Three.js on mobile devices; the support for WebGL and the
+performance you'll get will vary, but both are quickly improving:
+
+También es posible ejecutar Three.js en dispositivos móviles; la compatibilidad con WebGL y el rendimiento que se obtiene varían, pero ambos están mejorando rápidamente:
+
+
+
+With WebGL, you can create interactive 3D visualizations that run very well on
+desktops and on mobile devices.
+
+Con WebGL, puedes crear visualizaciones 3D interactivas que funcionan muy bien tanto en ordenadores de escritorio como en dispositivos móviles.
+
+
+In this book, we'll focus mostly on the WebGL-based renderer
+provided by Three.js. There is, however, also a CSS 3D-based renderer,
+which provides an easy API to create CSS 3D-based 3D scenes. A big
+advantage of using a CSS 3D-based approach is that this standard is
+supported on almost all mobile and desktop browsers and allows you
+to render HTML elements in a 3D space. We'll show how to use the CSS
+3D browser in Chapter 7, Particles, Sprites, and the Point Cloud.
+
+En este libro, nos centraremos principalmente en el renderizador basado en WebGL que ofrece Three.js. Sin embargo, también existe un renderizador basado en CSS 3D, que proporciona una API sencilla para crear escenas 3D con CSS 3D. Una gran ventaja de usar un enfoque basado en CSS 3D es que este estándar es compatible con casi todos los navegadores móviles y de escritorio, y permite renderizar elementos HTML en un espacio 3D. Mostraremos cómo usar el navegador CSS 3D en el Capítulo 7, Partículas, Sprites y Nube de Puntos.
+
+
+In this first chapter, you'll directly create your first 3D scene and will be able to run
+this in any of the previously mentioned browsers. We won't introduce too many
+complex Three.js features yet, but at the end of this chapter, you'll have created the
+Three.js scene you can see in the following screenshot:
+
+En este primer capítulo, crearás directamente tu primera escena 3D y podrás ejecutarla en cualquiera de los navegadores mencionados anteriormente. Todavía no introduciremos muchas funciones complejas de Three.js, pero al final de este capítulo, habrás creado la escena de Three.js que puedes ver en la siguiente captura de pantalla:
+
+For this first scene, you'll learn about the basics of Three.js and also create your first
+animation. Before you start your work on this example, in the next couple of sections,
+we'll first look at the tools you need to easily work with Three.js and how you can
+download the examples shown in this book.
+
+En esta primera escena, aprenderás los conceptos básicos de Three.js y crearás tu primera animación. Antes de comenzar con este ejemplo, en las siguientes secciones, veremos las herramientas necesarias para trabajar fácilmente con Three.js y cómo descargar los ejemplos que se muestran en este libro.
+
+
+**Requirements to use Three.js**
+
+Three.js is a JavaScript library, so all you need to create Three.js WebGL applications
+is a text editor and one of the supported browsers to render the results. I would like
+to recommend two JavaScript editors, which I've started using exclusively over the
+last couple of years:
+
+Three.js es una biblioteca de JavaScript, por lo que para crear aplicaciones WebGL con Three.js solo necesitas un editor de texto y uno de los navegadores compatibles para visualizar los resultados. Me gustaría recomendar dos editores de JavaScript que he empezado a usar exclusivamente en los últimos dos años:
+
+
+• WebStorm: This editor from the JetBrains guides has great support for editing JavaScript. It supports code completion, automatic deployment, and JavaScript debugging directly from the editor. Besides this, WebStorm has excellent GitHub (and other version control systems) support. You can download a trial edition from http://www.jetbrains.com/webstorm/.
+
+WebStorm: Este editor de las guías de JetBrains ofrece un excelente soporte para la edición de JavaScript. Permite la autocompletación de código, el despliegue automático y la depuración de JavaScript directamente desde el editor. Además, WebStorm cuenta con una excelente compatibilidad con GitHub (y otros sistemas de control de versiones). Puedes descargar una versión de prueba en http://www.jetbrains.com/webstorm/.
+
+
+• Notepad++: Notepad++ is a general-purpose editor that supports code highlighting for a wide range of programming languages. It can easily lay out and format JavaScript. Note that Notepad++ is only for Windows. You can download Notepad++ from http://notepad-plus-plus.org/.
+
+Notepad++: Notepad++ es un editor de propósito general que admite el resaltado de sintaxis para una amplia gama de lenguajes de programación. Permite maquetar y formatear JavaScript fácilmente. Tenga en cuenta que Notepad++ solo está disponible para Windows. Puede descargar Notepad++ desde http://notepad-plus-plus.org/.
+
+
+• Sublime Text Editor: Sublime is a great editor that has a very good support to edit JavaScript. Besides this, it provides many very helpful selections (such as multiple-line select) and edit options that, once you get used to them, provide a really good JavaScript-editing environment. Sublime can also be tested for free and can be downloaded from http://www.sublimetext.com/.
+
+Editor de texto Sublime: Sublime es un excelente editor con muy buen soporte para editar JavaScript. Además, ofrece numerosas opciones de selección (como la selección de varias líneas) y edición que, una vez que te familiarizas con ellas, proporcionan un entorno de edición de JavaScript realmente bueno. Sublime también se puede probar gratis y descargar desde http://www.sublimetext.com/.
+
+
+Even if you don't use any of these editors, there are a lot of editors available, open
+source and commercial, which you can use to edit JavaScript and create your Three.
+js projects. An interesting project you might want to look at is http://c9.io. This
+is a cloud-based JavaScript editor that can be connected to a GitHub account. This
+way, you can directly access all the source code and examples from this book and
+experiment with them.
+
+Aunque no uses ninguno de estos editores, existen muchos otros, tanto de código abierto como comerciales, que puedes usar para editar JavaScript y crear tus proyectos Three.js. Un proyecto interesante que quizás quieras explorar es http://c9.io. Se trata de un editor de JavaScript basado en la nube que se puede conectar a una cuenta de GitHub. De esta forma, podrás acceder directamente a todo el código fuente y los ejemplos de este libro y experimentar con ellos.
+
+
+Besides these text-based editors that you can use to edit and
+experiment with the sources from this book, Three.js currently also
+provides an online editor itself.
+With this editor, which you can find at http://threejs.org/
+editor/, you can create Three.js scenes using a graphical approach.
+
+Además de estos editores de texto que puedes usar para editar y experimentar con el código fuente de este libro, Three.js también ofrece un editor en línea. Con este editor, que puedes encontrar en http://threejs.org/editor/, puedes crear escenas de Three.js mediante un enfoque gráfico.
+
+
+I mentioned that most modern web browsers support WebGL and can be used to
+run Three.js examples. I usually run my code in Chrome. The reason is that most
+often, Chrome has the best support and performance for WebGL and it has a really
+great JavaScript debugger. With this debugger, which is shown in the following
+screenshot, you can quickly pinpoint problems, for instance, using breakpoints and
+console output. This is exemplified in the following screenshot. Throughout this
+book, I'll give you pointers on debugger usage and other debugging tips and tricks.
+
+Como mencioné, la mayoría de los navegadores web modernos son compatibles con WebGL y permiten ejecutar ejemplos de Three.js. Yo suelo ejecutar mi código en Chrome, ya que suele ofrecer la mejor compatibilidad y rendimiento con WebGL, además de contar con un excelente depurador de JavaScript. Con este depurador, que se muestra en la siguiente captura de pantalla, se pueden identificar problemas rápidamente, por ejemplo, mediante puntos de interrupción y la salida de la consola. Esto se ejemplifica en la siguiente captura de pantalla. A lo largo de este libro, les daré consejos sobre el uso del depurador y otras técnicas y trucos de depuración.
+
+
+That's enough for an introduction to Three.js for now; let's get the source code and
+start with the first scene.
+
+Por ahora, esto es suficiente como introducción a Three.js; vamos a obtener el código fuente y comenzar con la primera escena.
+
+
+**Getting the source code**
+
+All the code for this book can be accessed from GitHub (https://github.com/).
+GitHub is an online Git-based repository that you can use to store, access, and version
+source code. There are a couple of ways that you can get the sources for yourself:
+
+Todo el código de este libro está disponible en GitHub (https://github.com/). GitHub es un repositorio en línea basado en Git que puedes usar para almacenar, acceder y gestionar las versiones del código fuente. Hay varias maneras de obtener el código fuente:
+
+
+• Clone the Git repository
+• Download and extract the archive
+
+In the following two paragraphs, we'll explore these options in a bit more detail.
+
+En los dos párrafos siguientes, exploraremos estas opciones con un poco más de detalle.
+
+
+**Using Git to clone the repository**
+
+Git is an open source distributed version control system that I used to create and
+version all the examples in this book. For this, I used GitHub, a free, online Git
+repository. You can browse this repository by https://github.com/josdirksen/
+learning-threejs.
+
+Git es un sistema de control de versiones distribuido de código abierto que utilicé para crear y versionar todos los ejemplos de este libro. Para ello, usé GitHub, un repositorio Git gratuito en línea. Puedes explorar este repositorio en https://github.com/josdirksen/learning-threejs.
+
+
+To get all the examples, you can clone this repository using the git command-line
+tool. To do this, you first need to download a Git client for your operating system.
+For most modern operating systems, a client can be downloaded from http://git-
+scm.com, or you can use the one provided by GitHub itself (for Mac and Windows).
+After installing Git, you can use this to get a clone of this book's repository. Open a
+command prompt and go to the directory where you want to download the sources.
+In that directory, run the following command:
+
+Para obtener todos los ejemplos, puedes clonar este repositorio usando la herramienta de línea de comandos git. Para ello, primero necesitas descargar un cliente Git para tu sistema operativo. Para la mayoría de los sistemas operativos modernos, puedes descargar un cliente desde http://git-scm.com, o puedes usar el que proporciona GitHub (para Mac y Windows). Después de instalar Git, puedes usarlo para clonar el repositorio de este libro. Abre la línea de comandos y ve al directorio donde quieres descargar los archivos fuente. En ese directorio, ejecuta el siguiente comando:
+
+# git clone https://github.com/josdirksen/learning-threejs
+
+This will start downloading all the examples, as shown in the following screenshot:
+
+The learning-three.js directory will now contain all the examples that are used
+throughout this book.
+
+**Downloading and extracting the archive**
+
+If you don't want to use Git to download the sources directly from GitHub, you can
+also download an archive. Open https://github.com/josdirksen/learning-
+threejs in a browser and click on the Download ZIP button on the right-hand side,
+as follows:
+
+Extract this to a directory of your choice, and you'll have all the examples available.
+
+**Testing the examples**
+
+Now that you've downloaded or cloned the source code, let's do a quick check to see
+whether everything is working and make you familiar with the directory structure.
+The code and examples are organized per chapter. There are two different ways of
+viewing examples. You can either open the extracted or cloned folder in a browser
+directly and look at and run a specific example, or you can install a local web server.
+This first approach will work for most of the basic examples, but when we start loading
+external resources, such as models or texture images, just opening the HTML file isn't
+enough. In this case, we need a local web server to make sure the external resources are
+loaded correctly. In the following section, we explain a couple of different ways you
+can set up a simple local web server for testing. If you can't set up a local web server
+but use Chrome or Firefox, we also provide an explanation on how to disable certain
+security features so that you can even test without a local web server.
+
+Ahora que has descargado o clonado el código fuente, vamos a comprobar rápidamente que todo funciona correctamente y a familiarizarte con la estructura de directorios. El código y los ejemplos están organizados por capítulos. Hay dos maneras de ver los ejemplos: puedes abrir la carpeta extraída o clonada directamente en un navegador y ver y ejecutar un ejemplo específico, o puedes instalar un servidor web local. Esta primera opción funciona para la mayoría de los ejemplos básicos, pero cuando cargamos recursos externos, como modelos o imágenes de texturas, abrir el archivo HTML no es suficiente. En este caso, necesitamos un servidor web local para asegurarnos de que los recursos externos se carguen correctamente. En la siguiente sección, explicamos varias maneras de configurar un servidor web local sencillo para realizar pruebas. Si no puedes configurar un servidor web local, pero usas Chrome o Firefox, también te explicamos cómo desactivar ciertas funciones de seguridad para que puedas realizar pruebas incluso sin un servidor web local.
+
+
+
+Setting up a local web server is very easy depending on what you've already
+got installed. In here, we list a couple of examples on how to do this. There are
+many different ways to do this depending on what you've already got installed
+on your system.
+
+Configurar un servidor web local es muy sencillo, dependiendo de lo que ya tengas instalado. Aquí te mostramos algunos ejemplos de cómo hacerlo. Existen muchas maneras diferentes de hacerlo, según lo que tengas instalado en tu sistema.
+
+
+**Python-based web servers should work on most Unix/Mac systems**
+
+Most Unix/Linux/Mac systems already have Python installed. On those systems,
+you can very easily start a local web server:
+
+.. code:: Python
+
+   > python -m SimpleHTTPServer
+   
+   Serving HTTP on 0.0.0.0 port 8000 ...
+
+Do this in the directory where you checked out / downloaded the source code.
+
+**Npm-based web server if you've worked with Node.js**
+
+If you've already done some work with Node.js, there is good chance you've got npm
+installed. With npm, you have two simple options to set up a quick local web server
+for testing. The first options uses the http-server module, as follows:
+
+Si ya has trabajado con Node.js, es muy probable que tengas npm instalado. Con npm, tienes dos opciones sencillas para configurar rápidamente un servidor web local para realizar pruebas. La primera opción utiliza el módulo http-server, como se muestra a continuación:
+
+.. code:: Python
+
+   > npm install -g http-server
+   > http-server
+
+   Starting up http-server, serving ./ on port: 8080
+   Hit CTRL-C to stop the server
+
+Alternatively, you can also use the simple-http-server option, as follows:
+
+.. code:: Python
+
+   > npm install -g simple-http-server
+   > nserver
+   simple-http-server Now Serving: /Users/jos/git/Physijs at http://
+   localhost:8000/
+
+A disadvantage of this second approach, however, is that it doesn't automatically
+show directory listings, whereas the first approach does.
+
+**Portable version Mongoose for Mac and/or Windows**
+
+If you haven't got Python or npm installed, there is a simple, portable web server,
+named Mongoose, that you can use. First, download the binaries for your specific
+platform from https://code.google.com/p/mongoose/downloads/list. If you
+are using Windows, copy it to the directory containing the examples and double-
+click on the executable to start a web browser serving the directory it is started in.
+
+Si no tienes Python ni npm instalados, puedes usar Mongoose, un servidor web sencillo y portátil. Primero, descarga los binarios para tu plataforma desde https://code.google.com/p/mongoose/downloads/list. Si usas Windows, cópialos al directorio donde se encuentran los ejemplos y haz doble clic en el ejecutable para abrir un navegador web que acceda al directorio donde se inició.
+
+
+For other operating systems, you must also copy the executable to the target
+directory, but instead of double-clicking on the executable, you have to launch it
+from the command line. In both cases, a local web server will be started on port
+8080. The following screenshot encapsulates the discussion in this paragraph:
+
+Para otros sistemas operativos, también debe copiar el archivo ejecutable al directorio de destino, pero en lugar de hacer doble clic en él, debe ejecutarlo desde la línea de comandos. En ambos casos, se iniciará un servidor web local en el puerto 8080. La siguiente captura de pantalla resume lo explicado en este párrafo:
+
+
+
+By just clicking on a chapter, we can show and access all the examples for that
+specific chapter. If I discuss an example in this book, I'll refer to the specific name
+and folder so that you can directly test and play around with the code.
+
+Con solo hacer clic en un capítulo, podemos ver y acceder a todos los ejemplos correspondientes. Si analizo un ejemplo en este libro, indicaré su nombre y carpeta específicos para que puedas probar y experimentar directamente con el código.
+
+
+**Disabling security exceptions in Firefox and Chrome**
+
+If you use Chrome to run the examples, there is a way to disable some security
+settings so that you can use Chrome to view the examples without requiring a web
+server. To do this, you have to start Chrome in the following way:
+
+Si utilizas Chrome para ejecutar los ejemplos, existe una forma de desactivar algunas configuraciones de seguridad para poder visualizarlos sin necesidad de un servidor web. Para ello, debes iniciar Chrome de la siguiente manera:
+
+
+• For Windows, you call the following:
+
+.. code:: Python
+
+   chrome.exe --disable-web-security
+• On Linux, do the following:
+
+.. code:: Python
+
+   google-chrome --disable-web-security
+
+• And on Mac OS, you disable the settings by starting Chrome like this:
+
+.. code:: Python
+
+   open -a Google\ Chrome --args --disable-web-security
+
+When you start Chrome this way, you can access all the examples directly from the
+local filesystem.
+
+For Firefox users, we need to take a couple of different steps. Open Firefox and, in
+the URL bar, type about:config. This is what you'll see:
+
+On this screen, click on the I'll be careful, I promise! button. This will show you all
+the available properties you can use to fine-tune Firefox. In the search box on this
+screen, type in security.fileuri.strict_origin_policy and change its value to
+false just as we did in the following screenshot:
+
+En esta pantalla, haz clic en el botón «¡Tendré cuidado, lo prometo!». Esto te mostrará todas las propiedades disponibles que puedes usar para ajustar Firefox. En el cuadro de búsqueda de esta pantalla, escribe security.fileuri.strict_origin_policy y cambia su valor a false, tal como se muestra en la siguiente captura de pantalla:
+
+
+At this point, you can also use Firefox to directly run the examples provided in
+this book.
+
+Now that you've either got a web server installed, or disabled the necessary
+security settings, it is time to start creating our first Three.js scene.
+
+Ahora que ya tienes un servidor web instalado o has desactivado la configuración de seguridad necesaria, es hora de empezar a crear nuestra primera escena de Three.js.
+
+
+**Creating the HTML skeleton**
+
+The first thing we need to do is create an empty skeleton page that we can use as the
+base for all our examples, as follows:
+
+.. code:: html
+
+   <!DOCTYPE html>
+   <html>
+   <head>
+   <title>Example 01.01 - Basic skeleton</title>
+   <script src="../libs/three.js"></script>
+   <style>
+   body{
+   /* set margin to 0 and overflow to hidden, to use the
+   complete page */
+   margin: 0;
+   overflow: hidden;
+   }
+   </style>
+   </head>
+   <body>
+   <!-- Div which will hold the Output -->
+   <div id="WebGL-output">
+   </div>
+   <!-- Javascript code that runs our Three.js examples -->
+   <script>
+   // once everything is loaded, we run our Three.js stuff.
+   function init() {
+   // here we'll put the Three.js stuff
+   };
+   window.onload = init;
+   </script>
+   </body>
+   </html>
+
+**Downloading the example code**
+
+You can download the example code files from your account at
+http://www.packtpub.com for all the Packt Publishing books
+you have purchased. If you purchased this book elsewhere, you can
+visit http://www.packtpub.com/support and register to have
+the files e-mailed directly to you.
+
+As you can see from this listing, the skeleton is a very simple HTML page, with only
+a couple of elements. In the <head> element, we load the external JavaScript libraries
+that we'll use for the examples. For all the examples, we'll at least need to load the
+Three.js library, three.js. In the <head> element, we also add a couple of lines of
+CSS. These style elements remove any scrollbars when we create a full-page Three.
+js scene. In the <body> element of this page, you can see a single <div> element.
+When we write our Three.js code, we'll point the output of the Three.js renderer to
+that element. At the bottom of this page, you can already see a bit of JavaScript. By
+assigning the init function to the window.onload property, we make sure that this
+function gets called when the HTML document has finished loading. In the init
+function, we'll insert all the Three.js specific JavaScript.
+
+Como puede ver en este listado, el esqueleto es una página HTML muy simple, con solo un par de elementos. En el elemento <head>, cargamos las bibliotecas JavaScript externas que usaremos para los ejemplos. Para todos los ejemplos, necesitaremos cargar al menos la biblioteca Three.js, three.js. En el elemento <head>, también agregamos un par de líneas de CSS. Estos elementos de estilo eliminan cualquier barra de desplazamiento cuando creamos una escena Three.js de página completa. En el elemento <body> de esta página, puede ver un solo elemento <div>. Cuando escribamos nuestro código Three.js, apuntaremos la salida del renderizador Three.js a ese elemento. En la parte inferior de esta página, ya puede ver un poco de JavaScript. Al asignar la función init a la propiedad window.onload, nos aseguramos de que esta función se llame cuando el documento HTML haya terminado de cargarse. En la función init, insertaremos todo el JavaScript específico de Three.js.
+
+
+Three.js comes in two versions:
+
+• Three.min.js: This is the library you'd normally use when deploying Three.
+js sites on the Internet. This is a minified version of Three.js, created using
+UglifyJS, which is a quarter size of the normal Three.js library. All the
+examples and code used in this book are based on Three.js r69, which was
+released in October 2014.
+
+Sitios web de Three.js en Internet. Esta es una versión minificada de Three.js, creada con UglifyJS, que ocupa una cuarta parte del tamaño de la biblioteca Three.js original. Todos los ejemplos y el código utilizados en este libro se basan en Three.js r69, publicado en octubre de 2014.
+
+
+• Three.js: This is the normal Three.js library. We use this library in our examples since it makes debugging much easier when you can read and
+understand the Three.js source code.
+
+If we view this page in our browser, the results aren't very shocking. As you'd
+expect, all you see is an empty page.
+
+Si visualizamos esta página en nuestro navegador, los resultados no son muy sorprendentes. Como era de esperar, lo único que vemos es una página en blanco.
+
+
+In the next section, you'll learn how to add the first couple of 3D objects and render
+those to the <div> element we defined in our HTML skeleton.
+
+En la siguiente sección, aprenderás cómo agregar los primeros objetos 3D y renderizarlos en el elemento <div> que definimos en nuestro esqueleto HTML.
+
+
+
+**Rendering and viewing a 3D object**
+
+In this step, you'll create your first scene and add a couple of objects and a camera.
+Our first example will contain the following objects:
+
+I'll first show you how this looks in code (the source with comments can be found in
+chapter-01/02-first-scene.html), and then I'll explain what's happening:
+
+Primero les mostraré cómo se ve esto en código (el código fuente con comentarios se puede encontrar en chapter-01/02-first-scene.html), y luego les explicaré qué está sucediendo:
+
+
+.. code:: Python
+
+   function init() {
+   var scene = new THREE.Scene();
+   var camera = new THREE.PerspectiveCamera(45, window.innerWidth
+   /window.innerHeight, 0.1, 1000);
+   var renderer = new THREE.WebGLRenderer();
+   renderer.setClearColorHex(0xEEEEEE);
+   renderer.setSize(window.innerWidth, window.innerHeight);
+   var axes = new THREE.AxisHelper(20);
+   scene.add(axes);
+   var planeGeometry = new THREE.PlaneGeometry(60, 20, 1, 1);
+   var planeMaterial = new THREE.MeshBasicMaterial({color:
+   0xcccccc});
+   var plane = new THREE.Mesh(planeGeometry, planeMaterial);
+   plane.rotation.x = -0.5 * Math.PI;
+   plane.position.x = 15
+   plane.position.y = 0
+   plane.position.z = 0
+
+   scene.add(plane);
+   var cubeGeometry = new THREE.BoxGeometry(4, 4, 4)
+   var cubeMaterial = new THREE.MeshBasicMaterial({color: 0xff0000,
+   wireframe: true});
+   var cube = new THREE.Mesh(cubeGeometry, cubeMaterial);
+   cube.position.x = -4;
+   cube.position.y = 3;
+   cube.position.z = 0;
+   scene.add(cube);
+   var sphereGeometry = new THREE.SphereGeometry(4, 20, 20);
+   var sphereMaterial = new THREE.MeshBasicMaterial({color:
+   0x7777ff, wireframe: true});
+   var sphere = new THREE.Mesh(sphereGeometry, sphereMaterial);
+   sphere.position.x = 20;
+   sphere.position.y = 4;
+   sphere.position.z = 2;
+   scene.add(sphere);
+   camera.position.x = -30;
+   camera.position.y = 40;
+   camera.position.z = 30;
+   camera.lookAt(scene.position);
+   document.getElementById("WebGL-output")
+.   appendChild(renderer.domElement);
+   renderer.render(scene, camera);
+   };
+   window.onload = init;
+
+If we open this example in the browser, we see something that resembles what we're
+aiming at (see the screenshot at the beginning of this chapter), but it is still a long
+way off, as follows:
+
+Si abrimos este ejemplo en el navegador, vemos algo que se asemeja a lo que buscamos (ver la captura de pantalla al principio de este capítulo), pero aún está lejos de serlo, como se muestra a continuación:
+
+
+Before we start making this more beautiful, I'll first walk you through the code a step
+at a time so that you understand what the code does:
+
+Antes de empezar a embellecer esto, primero les explicaré el código paso a paso para que comprendan lo que hace:
+
+.. code:: Python
+
+   var scene = new THREE.Scene();
+   var camera = new THREE.PerspectiveCamera(45, window.innerWidth /
+   window.innerHeight, 0.1, 1000);
+   var renderer = new THREE.WebGLRenderer();
+   renderer.setClearColorHex()
+   renderer.setClearColor(new THREE.Color(0xEEEEEE));
+   renderer.setSize(window.innerWidth, window.innerHeight);
+
+At the top of the example, we define scene, camera, and renderer. The scene object
+is a container that is used to store and keep track of all the objects we want to render
+and all the lights we want to use. Without a THREE.Scene object, Three.js isn't able
+to render anything. More information on the THREE.Scene object can be found in the
+next chapter. The sphere and the cube we want to render will be added to scene later
+on in the example. In this first fragment, we also create a camera object. The camera
+object defines what we'll see when we render a scene. In Chapter 2, Basic Components
+That Make Up a Three.js Scene, you learn more about the arguments you can pass in to
+the camera object. Next we define renderer. The renderer object is responsible for
+calculating what the scene object will look like in the browser based on the camera
+object's angle. We create WebGLRenderer that uses your graphics card to render the
+scene in this example.
+
+En la parte superior del ejemplo, definimos la escena, la cámara y el renderizador. El objeto de escena es un contenedor que se utiliza para almacenar y realizar un seguimiento de todos los objetos que queremos renderizar y todas las luces que queremos usar. Sin un objeto THREE.Scene, Three.js no puede renderizar nada. Encontrará más información sobre el objeto THREE.Scene en el siguiente capítulo. La esfera y el cubo que queremos renderizar se añadirán a la escena más adelante en el ejemplo. En este primer fragmento, también creamos un objeto de cámara. El objeto de cámara define lo que veremos cuando rendericemos una escena. En el Capítulo 2, Componentes básicos que conforman una escena de Three.js, aprenderá más sobre los argumentos que puede pasar al objeto de cámara. A continuación, definimos el renderizador. El objeto renderizador es responsable de calcular cómo se verá el objeto de escena en el navegador en función del ángulo del objeto de cámara. Creamos un WebGLRenderer que utiliza su tarjeta gráfica para renderizar la escena en este ejemplo.
+
+
+If you look through the source code and the documentation of Three.
+js (which you can find at http://threejs.org/), you'll notice
+that there are different renderers available besides the WebGL-based
+one. There is a canvas-based renderer and even an SVG-based one.
+Even though they work and can render simple scenes, I wouldn't
+recommend using them. They're very CPU-intensive and lack
+features such as good material support and shadows.
+
+Si revisas el código fuente y la documentación de Three.js (disponible en http://threejs.org/), notarás que existen diferentes renderizadores además del basado en WebGL. Hay uno basado en canvas e incluso uno basado en SVG. Si bien funcionan y pueden renderizar escenas sencillas, no recomiendo usarlos. Consumen muchos recursos de la CPU y carecen de funciones como un buen soporte para materiales y sombras.
+
+
+Here, we set the background color of renderer to almost white (new THREE.
+Color(0XEEEEEE)) with the setClearColor function and tell renderer how large
+the scene needs to be rendered using the setSize function.
+
+Aquí, establecemos el color de fondo del renderizador a casi blanco (nuevo THREE. Color(0XEEEEEE)) con la función setClearColor y le indicamos al renderizador qué tan grande debe ser la escena que debe renderizarse usando la función setSize.
+
+
+So far, we've got a basic empty scene, a renderer, and a camera. There is, however,
+nothing yet to render. The following code adds the helper axes and the plane:
+
+Hasta ahora, tenemos una escena básica vacía, un renderizador y una cámara. Sin embargo, aún no hay nada que renderizar. El siguiente código añade los ejes auxiliares y el plano:
+
+
+.. code:: Python
+
+   var axes = new THREE.AxisHelper( 20 );
+   scene.add(axes);
+   var planeGeometry = new THREE.PlaneGeometry(60,20);
+   var planeMaterial = new THREE.MeshBasicMaterial({color:
+   0xcccccc});
+   var plane = new THREE.Mesh(planeGeometry,planeMaterial);
+   plane.rotation.x=-0.5*Math.PI;
+   plane.position.x=15
+   plane.position.y=0
+   plane.position.z=0
+   scene.add(plane);
+
+As you can see, we create an axes object and use the scene.add function to add
+these axes to our scene. Next, we create the plane. This is done in two steps. First, we
+define what the plane looks like using the new THREE.PlaneGeometry(60,20) code.
+In this case, it has a width of 60 and a height of 20. We also need to tell Three.js what
+this plane looks like (for example, its color and its transparency). In Three.js, we do
+this by creating a material object. For this first example, we'll create a basic material
+(THREE.MeshBasicMaterial) with the color 0xcccccc. Next, we combine these two
+into a Mesh object with the name plane. Before we add plane to the scene, we need
+to put it in the correct position; we do this by first rotating it 90 degrees around the
+x axis, and next, we define its position in the scene using the position properties. If
+you're already interested in the details of this, look at the 06-mesh-properties.
+html example from the code folder of Chapter 2, Basic Components That Make Up a
+Three.js Scene, which shows and explains rotation and positioning. We then need to
+do is add plane to scene, just like we did with axes.
+
+Como puedes ver, creamos un objeto de ejes y usamos la función scene.add para agregar estos ejes a nuestra escena. A continuación, creamos el plano. Esto se hace en dos pasos. Primero, definimos cómo se ve el plano usando el nuevo código THREE.PlaneGeometry(60,20). En este caso, tiene un ancho de 60 y una altura de 20. También necesitamos decirle a Three.js cómo se ve este plano (por ejemplo, su color y su transparencia). En Three.js, hacemos esto creando un objeto material. Para este primer ejemplo, crearemos un material básico (THREE.MeshBasicMaterial) con el color 0xcccccc. Luego, combinamos estos dos en un objeto Mesh con el nombre plane. Antes de agregar plane a la escena, necesitamos colocarlo en la posición correcta; hacemos esto primero rotándolo 90 grados alrededor del eje x, y luego, definimos su posición en la escena usando las propiedades position. Si ya te interesan los detalles, consulta el ejemplo 06-mesh-properties.html de la carpeta de código del Capítulo 2, Componentes básicos de una escena Three.js, que muestra y explica la rotación y el posicionamiento. A continuación, solo tenemos que añadir un plano a la escena, igual que hicimos con los ejes.
+
+
+The cube and sphere objects are added in the same manner, but with the wireframe
+property set to true, which tells Three.js to render a wireframe and not a solid object.
+Now, let's move on to the final part of this example:
+
+Los objetos cubo y esfera se añaden de la misma manera, pero con la propiedad wireframe establecida en true, lo que le indica a Three.js que renderice un modelo alámbrico y no un objeto sólido. Ahora, pasemos a la parte final de este ejemplo:
+
+
+.. code:: Pythhon
+
+   camera.position.x = -30;
+   camera.position.y = 40;
+   camera.position.z = 30;
+   camera.lookAt(scene.position);
+   document.getElementById("WebGL-output")
+   .appendChild(renderer.domElement);
+   renderer.render(scene, camera);
+
+At this point, all the elements we want to render are added to the scene at the correct
+positions. I've already mentioned that the camera defines what will be rendered. In
+this piece of code, we position the camera using the x, y, and z position attributes to
+hover above our scene. To make sure the camera is looking at our objects, we use the
+lookAt function to point it at the center of our scene, which is located at position (0, 0,
+0) by default. All that is left to do is append the output from the renderer to the <div>
+element of our HTML skeleton. We use standard JavaScript to select the correct output
+element and append it to our div element with the appendChild function. Finally, we
+tell renderer to render scene using the camera object provided.
+
+At this point, all the elements we want to render are added to the scene at the correct positions. I've already mentioned that the camera defines what will be rendered. In this piece of code, we position the camera using the x, y, and z position attributes to hover above our scene. To make sure the camera is looking at our objects, we use the lookAt function to point it at the center of our scene, which is located at position (0, 0, 0) by default. All that is left to do is append the output from the renderer to the <div> element of our HTML skeleton. We use standard JavaScript to select the correct output element and append it to our div element with the appendChild function. Finally, we tell renderer to render scene using the camera object provided.
+
+
+In the next couple of sections, we'll make this scene more pretty by adding lights,
+shadows, more materials, and even animations.
+
+In the next couple of sections, we'll make this scene more pretty by adding lights, shadows, more materials, and even animations.
+
+
+**Adding materials, lights, and shadows**
+
+Adding new materials and lights in Three.js is very simple and is done in pretty
+much the same way as we explained in the previous section. We start by adding
+a light source to the scene (for the complete source look at 03-materials-light.
+html), as follows:
+
+Agregar nuevos materiales y luces en Three.js es muy sencillo y se hace prácticamente de la misma manera que explicamos en la sección anterior. Comenzamos agregando una fuente de luz a la escena (para ver el código fuente completo, consulte 03-materials-light.html), como sigue:
+
+
+
+.. code:: Python
+
+   var spotLight = new THREE.SpotLight( 0xffffff );
+   spotLight.position.set( -40, 60, -10 );
+   scene.add( spotLight );
+
+THREE.SpotLight illuminates our scene from its position (spotLight.position.
+set( -40, 60, -10 )). If we render the scene this time, however, you won't see
+any difference from the previous one. The reason is that different materials respond
+differently to light. The basic material we used in the previous example (THREE.
+MeshBasicMaterial) doesn't do anything with the light sources in the scene. They
+just render the object in the specified color. So, we have to change the materials for
+plane, sphere, and cube to the following:
+
+THREE.SpotLight ilumina nuestra escena desde su posición (spotLight.position.set(-40, 60, -10)). Sin embargo, si renderizamos la escena esta vez, no verás ninguna diferencia con respecto a la anterior. La razón es que los diferentes materiales responden de manera diferente a la luz. El material básico que usamos en el ejemplo anterior (THREE.MeshBasicMaterial) no hace nada con las fuentes de luz en la escena. Simplemente renderiza el objeto en el color especificado. Por lo tanto, tenemos que cambiar los materiales para el plano, la esfera y el cubo a lo siguiente:
+
+
+.. code:: Python
+
+   var planeGeometry = new THREE.PlaneGeometry(60,20);
+   var planeMaterial = new THREE.MeshLambertMaterial({color:
+   0xffffff});
+   var plane = new THREE.Mesh(planeGeometry, planeMaterial);
+   ...
+   var cubeGeometry = new THREE.BoxGeometry(4,4,4);
+   var cubeMaterial = new THREE.MeshLambertMaterial({color:
+   0xff0000});
+   var cube = new THREE.Mesh(cubeGeometry, cubeMaterial);
+   ...
+   var sphereGeometry = new THREE.SphereGeometry(4,20,20);
+   var sphereMaterial = new THREE.MeshLambertMaterial({color:
+   0x7777ff});
+   var sphere = new THREE.Mesh(sphereGeometry, sphereMaterial);
+
+In this piece of code, we changed the materials for our objects to
+MeshLambertMaterial. This material and MeshPhongMaterial are the materials
+Three.js provides that take light sources into account when rendered.
+
+En este fragmento de código, cambiamos los materiales de nuestros objetos a MeshLambertMaterial. Este material, junto con MeshPhongMaterial, son los que proporciona Three.js y que tienen en cuenta las fuentes de luz al renderizar.
+
+
+The result, shown in the following screenshot, however, still isn't what we're looking
+for:
+
+Sin embargo, el resultado, que se muestra en la siguiente captura de pantalla, todavía no es lo que buscamos:
+
+
+We're getting there, and cube and sphere are looking a lot better. What is still
+missing, though, are the shadows.
+
+Ya casi lo logramos, y el cubo y la esfera se ven mucho mejor. Sin embargo, todavía faltan las sombras.
+
+
+Rendering shadows takes a lot of computing power, and for that reason, shadows
+are disabled by default in Three.js. Enabling them, though, is very easy. For shadows,
+we have to change the source in a couple of places, as follows:
+
+Renderizar sombras requiere mucha potencia de cálculo, por lo que están desactivadas por defecto en Three.js. Sin embargo, activarlas es muy sencillo. Para ello, debemos modificar el código fuente en un par de lugares, como se muestra a continuación:
+
+
+.. code:: Python
+
+   renderer.setClearColor(new THREE.Color(0xEEEEEE, 1.0));
+   renderer.setSize(window.innerWidth, window.innerHeight);
+   renderer.shadowMapEnabled = true;
+
+The first change we need to make is tell renderer that we want shadows. You do
+this by setting the shadowMapEnabled property to true. If you look at the result
+from this change, you won't notice anything different yet. That is because we need to
+explicitly define which objects cast shadows and which objects receive shadows. In
+our example, we want the sphere and the cube to cast shadows on the ground plane.
+You do this by setting the corresponding properties on those objects:
+
+El primer cambio que debemos realizar es indicarle al renderizador que queremos sombras. Esto se logra configurando la propiedad shadowMapEnabled a true. Si observas el resultado de este cambio, aún no notarás ninguna diferencia. Esto se debe a que necesitamos definir explícitamente qué objetos proyectan sombras y cuáles las reciben. En nuestro ejemplo, queremos que la esfera y el cubo proyecten sombras en el plano del suelo. Esto se logra configurando las propiedades correspondientes en dichos objetos:
+
+
+.. code:: Python
+
+   plane.receiveShadow = true;
+   ...
+   cube.castShadow = true;
+   ...
+   sphere.castShadow = true;
+
+Now, there is just one more thing to do to get the shadows. We need to define which
+light sources in our scene will cause shadows. Not all the lights can cast shadows,
+and you'll learn more about that in the next chapter, but THREE.SpotLight, which
+we used in this example, can. We only need to set the correct property, as shown in
+the following line of code, and the shadows will finally be rendered:
+
+Ahora, solo queda un paso más para obtener las sombras. Necesitamos definir qué fuentes de luz en nuestra escena las proyectarán. No todas las luces pueden proyectar sombras, y aprenderás más sobre esto en el próximo capítulo, pero THREE.SpotLight, que usamos en este ejemplo, sí puede. Solo necesitamos configurar la propiedad correcta, como se muestra en la siguiente línea de código, y finalmente se renderizarán las sombras:
+
+
+.. code:: Python
+
+   spotLight.castShadow = true;
+
+And with this, we get a scene complete with shadows from our light source,
+as follows:
+
+Y con esto, obtenemos una escena completa con sombras de nuestra fuente de luz, como sigue:
+
+
+The last feature that we'll add to this first scene is some simple animation. In Chapter
+9, Animations and Moving the Camera, you'll learn more advanced animation options.
+
+La última característica que añadiremos a esta primera escena es una animación sencilla. En el capítulo 9, Animaciones y movimiento de la cámara, aprenderás opciones de animación más avanzadas.
+
+
+**Expanding your first scene with animations**
+
+If we want to animate the scene, the first thing that we need to do is find some way to
+re-render the scene at a specific interval. Before HTML5 and the related JavaScript APIs
+came along, the way to do this was using the setInterval(function,interval)
+function. With setInterval, we could specify a function that, for instance, would be
+called every 100 milliseconds. The problem with this function is that it doesn't take
+into account what is happening in the browser. If you were browsing another tab, this
+function would still be fired every couple of milliseconds. Besides that, setInterval
+isn't synchronized with the redrawing of the screen. This can lead to higher CPU usage
+and bad performance.
+
+Si queremos animar la escena, lo primero que debemos hacer es encontrar una manera de volver a renderizarla a intervalos específicos. Antes de la llegada de HTML5 y las API de JavaScript relacionadas, la forma de hacerlo era mediante la función `setInterval(función, intervalo)`. Con `setInterval`, podíamos especificar una función que, por ejemplo, se ejecutaría cada 100 milisegundos. El problema con esta función es que no tiene en cuenta lo que sucede en el navegador. Si se estuviera navegando en otra pestaña, esta función seguiría ejecutándose cada pocos milisegundos. Además, `setInterval` no está sincronizado con el redibujado de la pantalla. Esto puede provocar un mayor consumo de CPU y un rendimiento deficiente.
+
+
+**Introducing requestAnimationFrame**
+
+Modern browsers luckily have a solution for that with the requestAnimationFrame
+function. With requestAnimationFrame, you can specify a function that is called
+at an interval defined by the browser. You do any drawing you need to do in the
+supplied function, and the browser will make sure it is painted as smoothly and
+efficiently as possible. Using this is really simple (the complete source can be found
+in the 04-materials-light-animation.html file), you just create a function that
+handles the rendering:
+
+Afortunadamente, los navegadores modernos ofrecen una solución para esto con la función `requestAnimationFrame`. Con `requestAnimationFrame`, puedes especificar una función que se ejecuta a intervalos definidos por el navegador. Realizas el dibujo necesario dentro de la función proporcionada, y el navegador se encargará de que se renderice de la forma más fluida y eficiente posible. Su uso es muy sencillo (el código fuente completo se encuentra en el archivo `04-materials-light-animation.html`): simplemente crea una función que gestione el renderizado.
+
+
+.. code:: Python
+
+   function renderScene() {
+   requestAnimationFrame(renderScene);
+   renderer.render(scene, camera);
+   }
+
+In this renderScene function, we call requestAnimationFrame again, to keep
+the animation going. The only thing we need to change in the code is that instead
+of calling renderer.render after we've created the complete scene, we call the
+renderScene function once to kick off the animation:
+
+En esta función renderScene, volvemos a llamar a requestAnimationFrame para que la animación continúe. Lo único que debemos cambiar en el código es que, en lugar de llamar a renderer.render después de haber creado la escena completa, llamamos a la función renderScene una sola vez para iniciar la animación:
+
+
+.. code:: Python
+
+   ...
+   document.getElementById("WebGL-output")
+   .appendChild(renderer.domElement);
+   renderScene();
+
+If you run this, you won't see any changes yet compared to the previous example
+because we haven't animated anything yet. Before we add the animation, though, I
+want to introduce a small helper library that gives us information about the frame rate
+the animation is running at. This library, from the same author as Three.js, renders a
+small graph that shows us the frames per second we're getting for this animation.
+
+Si ejecutas esto, no verás ningún cambio con respecto al ejemplo anterior porque aún no hemos animado nada. Sin embargo, antes de añadir la animación, quiero presentarte una pequeña biblioteca auxiliar que nos proporciona información sobre la velocidad de fotogramas de la animación. Esta biblioteca, del mismo autor que Three.js, muestra un pequeño gráfico con los fotogramas por segundo que obtenemos para esta animación.
+
+
+To add these statistics, we first need to include the library in the <head> element of
+the HTML, as follows:
+
+
+
+.. code:: Python
+
+   <script src="../libs/stats.js"></script>
+
+And we add a <div> element that will be used as output for the statistics graph,
+as follows:
+
+.. code:: Python
+
+   <div id="Stats-output"></div>
+
+The only thing left to do is initialize the statistics and add them to this <div>
+element, as follows:
+
+.. code:: Python
+
+   function initStats() {
+   var stats = new Stats();
+   stats.setMode(0);
+   stats.domElement.style.position = 'absolute';
+   stats.domElement.style.left = '0px';
+   stats.domElement.style.top = '0px';
+   document.getElementById("Stats-output")
+   .appendChild( stats.domElement );
+   return stats;
+   }
+
+This function initializes the statistics. The interesting part is the setMode function.
+If we set it to 0, we'll measure frames per second (fps), and if we set this to 1, we
+can measure rendering time. For this example, we're interested in fps, so 0 it is. At
+the beginning of our init() function, we'll call this function, and we've got stats
+enabled, as follows:
+
+Esta función inicializa las estadísticas. La parte interesante es la función setMode. Si la establecemos en 0, mediremos los fotogramas por segundo (fps), y si la establecemos en 1, podemos medir el tiempo de renderizado. Para este ejemplo, nos interesan los fps, así que la establecemos en 0. Al comienzo de nuestra función init(), llamaremos a esta función y tendremos las estadísticas habilitadas, como se muestra a continuación:
+
+
+.. code:: Python
+
+   function init(){
+   var stats = initStats();
+   ...
+   }
+
+The only thing left to do is tell the stats object when we're in a new rendering
+cycle. We do this by adding a call to the stats.update function in our renderScene
+function, as follows.
+
+Lo único que queda por hacer es indicarle al objeto stats cuándo estamos en un nuevo ciclo de renderizado. Hacemos esto agregando una llamada a la función stats.update en nuestra función renderScene, como se muestra a continuación.
+
+
+.. code:: Python
+
+   function renderScene() {
+   stats.update();
+   ...
+   requestAnimationFrame(renderScene);
+   renderer.render(scene, camera);
+   }
+
+If you run the code with these additions, you'll see the statistics in the upper-left
+corner, as shown in the following screenshot:
+
+**Animating the cube**
+
+With requestAnimationFrame and the statistics configured, we've got a place to
+put our animation code. In this section, we'll expand the renderScene function with
+code that will rotate our red cube around all of its axes. Let's start by showing you
+the code:
+
+Con requestAnimationFrame y las estadísticas configuradas, ya tenemos dónde colocar nuestro código de animación. En esta sección, ampliaremos la función renderScene con código que rotará nuestro cubo rojo alrededor de todos sus ejes. Comencemos mostrándoles el código:
+
+
+.. code:: Python
+
+   function renderScene() {
+   ...
+   cube.rotation.x += 0.02;
+   cube.rotation.y += 0.02;
+   cube.rotation.z += 0.02;
+   ...
+   requestAnimationFrame(renderScene);
+   renderer.render(scene, camera);
+   }
+
+That looks simple, right? What we do is that we increase the rotation property
+of each of the axes with 0.02 every time the renderScene function is called, which
+shows up as a cube smoothly rotating around all if its axes. Bouncing the blue ball
+isn't much harder.
+
+Parece sencillo, ¿verdad? Lo que hacemos es aumentar la propiedad de rotación de cada eje en 0,02 cada vez que se llama a la función renderScene, lo que se manifiesta como un cubo que gira suavemente alrededor de todos sus ejes. Hacer rebotar la pelota azul no es mucho más difícil.
+
+
+**Bouncing the ball**
+
+To bounce the ball, we once again add a couple of lines of code to our renderScene
+function, as follows:
+
+Para hacer rebotar la pelota, añadimos de nuevo un par de líneas de código a nuestra función renderScene, como sigue:
+
+
+.. code:: Python
+
+   var step=0;
+   function renderScene() {
+   ...
+   step+=0.04;
+   sphere.position.x = 20+( 10*(Math.cos(step)));
+   sphere.position.y = 2 +( 10*Math.abs(Math.sin(step)));
+   ...
+   requestAnimationFrame(renderScene);
+   renderer.render(scene, camera);
+   }
+
+With the cube, we changed the rotation property; for the sphere, we're going to
+change its position property in the scene. We want the sphere to bounce from
+one point in the scene to another with a nice, smooth curve. This is shown in the
+following figure
+
+Con el cubo, cambiamos la propiedad de rotación; para la esfera, vamos a cambiar su propiedad de posición en la escena. Queremos que la esfera rebote de un punto a otro de la escena con una curva suave y uniforme. Esto se muestra en la siguiente figura.
+
+
+For this, we need to change its position on the x axis and its position on the y axis.
+The Math.cos and Math.sin functions help us in creating a smooth trajectory using
+the step variable. I won't go into the details of how this works here. For now, all
+you need to know is that step+=0.04 defines the speed of the bouncing sphere.
+In Chapter 8, Creating and Loading Advanced Meshes and Geometries, we'll look in
+much more detail how these functions can be used for animation, and I'll explain
+everything. Here's how the ball looks in the middle of a bounce:
+
+Para ello, necesitamos cambiar su posición en el eje x y en el eje y. Las funciones Math.cos y Math.sin nos ayudan a crear una trayectoria suave utilizando la variable step. No entraré en detalles sobre cómo funciona esto aquí. Por ahora, solo necesitas saber que step+=0.04 define la velocidad de la esfera que rebota. En el Capítulo 8, Creación y carga de mallas y geometrías avanzadas, veremos con mucho más detalle cómo se pueden usar estas funciones para la animación, y lo explicaré todo. Así es como se ve la pelota en medio de un rebote:
+
+
+Before wrapping up this chapter, I want to add one more element to our basic scene.
+When working with 3D scenes, animations, colors, and properties like that, it often
+requires a bit of experimenting to get the correct color or speed. It would be very
+easy if you could just have a simple GUI that allows you to change these kinds of
+properties on the fly. Luckily, there is!
+
+Antes de concluir este capítulo, quiero añadir un elemento más a nuestra escena básica. Al trabajar con escenas 3D, animaciones, colores y propiedades similares, a menudo se requiere cierta experimentación para obtener el color o la velocidad correctos. Sería muy fácil si existiera una interfaz gráfica sencilla que permitiera modificar estas propiedades sobre la marcha. ¡Por suerte, existe!
+
+
+**Using dat.GUI to make experimenting easier**
+
+A couple of employees from Google created a library called dat.GUI (you can find
+the documentation online at http://code.google.com/p/dat-gui/), which allows
+you to very easily create a simple user interface component that can change variables
+in your code. In this last part of this chapter, we'll use dat.GUI to add a user interface
+to our example that allows us to change the following:
+
+Un par de empleados de Google crearon una biblioteca llamada dat.GUI (puedes encontrar la documentación en línea en http://code.google.com/p/dat-gui/), que te permite crear fácilmente un componente de interfaz de usuario sencillo que puede cambiar variables en tu código. En esta última parte de este capítulo, usaremos dat.GUI para agregar una interfaz de usuario a nuestro ejemplo que nos permita cambiar lo siguiente:
+
+
+• Control the speed of the bouncing ball
+• Control the rotation of the cube
+
+Just like we had to do for the statistics, we first add this library to the <head> element
+of our HTML page, as follows:
+
+Tal como tuvimos que hacer para las estadísticas, primero agregamos esta biblioteca al elemento <head> de nuestra página HTML, de la siguiente manera:
+
+
+.. code:: Python
+
+   <script src="../libs/dat.gui.js"></script>
+
+The next thing we need to configure is a JavaScript object that will hold the
+properties we want to change using dat.GUI. In the main part of our JavaScript code,
+we add the following JavaScript object, as follows:
+
+Lo siguiente que necesitamos configurar es un objeto JavaScript que contendrá las propiedades que queremos cambiar usando dat.GUI. En la parte principal de nuestro código JavaScript, agregamos el siguiente objeto JavaScript, como se muestra a continuación:
+
+
+.. code:: Python
+
+   var controls = new function() {
+   this.rotationSpeed = 0.02;
+   this.bouncingSpeed = 0.03;
+   }
+
+In this JavaScript object, we define two properties—this.rotationSpeed and this.
+bouncingSpeed—and their default values. Next, we pass this object into a new dat.
+GUI object and define the range for these two properties, as follows:
+
+En este objeto JavaScript, definimos dos propiedades: this.rotationSpeed ​​y this.bouncingSpeed, y sus valores predeterminados. A continuación, pasamos este objeto a un nuevo objeto dat.GUI y definimos el rango para estas dos propiedades, como sigue:
+
+
+.. code:: Python
+
+   var gui = new dat.GUI();
+   gui.add(controls, 'rotationSpeed', 0, 0.5);
+   gui.add(controls, 'bouncingSpeed', 0, 0.5);
+
+The rotationSpeed and bouncingSpeed properties are both set to a range of 0
+to 0.5. All we need to do now is make sure that in our renderScene loop, we
+reference these two properties directly so that when we make changes through the
+dat.GUI user interface, it immediately affects the rotation and bounce speed of our
+objects, as follows:
+
+Las propiedades rotationSpeed ​​y bouncingSpeed ​​están configuradas en un rango de 0 a 0,5. Ahora solo necesitamos asegurarnos de que en nuestro bucle renderScene hagamos referencia directa a estas dos propiedades para que, cuando realicemos cambios a través de la interfaz de usuario dat.GUI, estos afecten inmediatamente a la velocidad de rotación y rebote de nuestros objetos, como sigue:
+
+
+.. code:: Python
+
+   function renderScene() {
+   ...
+   cube.rotation.x += controls.rotationSpeed;
+   cube.rotation.y += controls.rotationSpeed;
+   cube.rotation.z += controls.rotationSpeed;
+   step += controls.bouncingSpeed;
+   sphere.position.x = 20 +(10 * (Math.cos(step)));
+   sphere.position.y = 2 +(10 * Math.abs(Math.sin(step)));
+   ...
+   }
+
+Now, when you run this example (05-control-gui.html), you'll see a simple user
+interface that you can use to control the bouncing and rotation speeds. A screenshot
+of the bouncing ball and the rotating cube is shown here:
+
+Ahora, al ejecutar este ejemplo (05-control-gui.html), verá una interfaz de usuario sencilla que le permitirá controlar la velocidad de rebote y rotación. Aquí se muestra una captura de pantalla de la pelota que rebota y el cubo que gira:
+
+
+If you've looked at the examples in your browser, you might have noticed that when
+you change the size of your browser, the scene doesn't automatically scale. In the
+next section, we'll add this as a final feature for this chapter.
+
+Si has visto los ejemplos en tu navegador, habrás notado que al cambiar el tamaño de la ventana, la escena no se ajusta automáticamente. En la siguiente sección, añadiremos esta función como característica final de este capítulo.
+
+
+**Automatically resize the output when browser size changes**
+
+Changing the camera when the browser is resized can be done pretty simply. The
+first thing we need to do is register an event listener like this:
+
+Cambiar la cámara al redimensionar el navegador es bastante sencillo. Lo primero que debemos hacer es registrar un detector de eventos como este:
+
+
+.. code:: Python
+
+   window.addEventListener('resize', onResize, false);
+
+Now, whenever the browser window is resized, the onResize function, which we'll
+specify next, is called. In this onResize function, we need to update the camera and
+renderer, as follows:
+
+Ahora, cada vez que se redimensiona la ventana del navegador, se llama a la función onResize, que especificaremos a continuación. En esta función onResize, necesitamos actualizar la cámara y el renderizador, como sigue:
+
+
+.. code:: Python
+
+   function onResize() {
+   camera.aspect = window.innerWidth / window.innerHeight;
+
+   camera.updateProjectionMatrix();
+   renderer.setSize(window.innerWidth, window.innerHeight);
+   }
+
+For the camera, we need to update the aspect property, which holds the aspect
+ratio of the screen, and for the renderer, we need to change its size. The final step
+is to move the variable definitions for camera, renderer, and scene outside of
+the init() function so that we can access them from different functions (like the
+onResize function), as follows:
+
+Para la cámara, necesitamos actualizar la propiedad aspect, que contiene la relación de aspecto de la pantalla, y para el renderizador, necesitamos cambiar su tamaño. El último paso es mover las definiciones de variables para la cámara, el renderizador y la escena fuera de la función init() para que podamos acceder a ellas desde diferentes funciones (como la función onResize), de la siguiente manera:
+
+
+.. code:: Python
+
+   var camera;
+   var scene;
+   var renderer;
+   function init() {
+   ...
+   scene = new THREE.Scene();
+   camera = new THREE.PerspectiveCamera(45, window.innerWidth /
+   window.innerHeight, 0.1, 1000);
+   renderer = new THREE.WebGLRenderer();
+   ...
+   }
+
+To see this effect in action, open the 06-screen-size-change.html example
+and resize your browser window.
+
+**Summary**
+
+That's it for the first chapter. In this chapter, we showed you how to set up your
+development environment, how to get the code, and how to get started with the
+examples provided with this book. You further learned that to render a scene with
+Three.js, you first have to create a THREE.Scene object, add a camera, a light, and
+the objects that you want to render. We also showed you how you can expand
+this basic scene by adding shadows and animations. Lastly, we added a couple of
+helper libraries. We used dat.GUI, which allows you to quickly create control user
+interfaces, and we added stats.js, which provided feedback on the frame rate at
+which your scene is rendered.
+
+Esto es todo por el primer capítulo. En este capítulo, te mostramos cómo configurar tu entorno de desarrollo, cómo obtener el código y cómo empezar con los ejemplos que se incluyen en este libro. También aprendiste que para renderizar una escena con Three.js, primero debes crear un objeto THREE.Scene, añadir una cámara, una luz y los objetos que deseas renderizar. Además, te mostramos cómo puedes ampliar esta escena básica añadiendo sombras y animaciones. Por último, añadimos un par de bibliotecas auxiliares. Usamos dat.GUI, que te permite crear rápidamente interfaces de usuario de control, y añadimos stats.js, que proporciona información sobre la velocidad de fotogramas a la que se renderiza tu escena.
+
+
+In the next chapter, we'll expand on the example we created here. You'll learn more
+about the most important building blocks that you can use in Three.js.
+
+
